@@ -1,0 +1,3 @@
+rootProject.name = 'CardBaseApp'
+
+includeFlat 'htu_mtgcard'
