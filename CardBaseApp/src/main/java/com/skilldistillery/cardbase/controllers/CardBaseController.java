@@ -33,7 +33,7 @@ public class CardBaseController {
 	}
 
 	@RequestMapping(path = {"addACardToTheDatabase.do"}, method = RequestMethod.POST)
-	public String addACard(@RequestParam Card card, Model model) {
+	public String addACard(Card card, Model model) {
 		Card cardCreated = dao.createCard(card);
 		model.addAttribute("card", cardCreated);
 		return "card/createdCard";

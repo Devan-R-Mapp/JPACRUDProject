@@ -13,7 +13,7 @@
 <div class="createCardForm">
 	<form action="addACardToTheDatabase.do" method="POST">
 
-		<label for="setAbbr">Set Abbreviation:</label> <input type="text" name="setAbbr" value="RTR" disabled="disabled" required><br>
+		<label for="setAbbr">Set Abbreviation:</label> <input type="text" name="setAbbr" value="RTR" readonly required><br>
 		<label for="cardName">Card Name:</label> <input type="text" name="cardName" required><br>
 		Is this card legendary? <br>
 		<label for="legendary">Yes</label> <input type="radio" value="true" name="legendary"> <br> 
