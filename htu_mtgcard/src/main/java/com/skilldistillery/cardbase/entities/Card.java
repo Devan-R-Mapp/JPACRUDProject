@@ -38,11 +38,10 @@ public class Card {
 	
 	
 	
-	public Card(int id, String setAbbr, String cardName, boolean legendary, String cardType, String cardSubType,
+	public Card(String setAbbr, String cardName, boolean legendary, String cardType, String cardSubType,
 			String cardText, String image, String color, String setPosition, String rarity, Integer cmc, String mc,
 			Integer power, Integer toughness, Integer loyalty) {
 		super();
-		this.id = id;
 		this.setAbbr = setAbbr;
 		this.cardName = cardName;
 		this.legendary = legendary;

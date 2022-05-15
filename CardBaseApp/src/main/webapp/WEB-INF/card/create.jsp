@@ -6,42 +6,54 @@
 <head>
 <meta charset="UTF-8">
 <title>Create A Card</title>
+<jsp:include page="../bootstrapjsp.jsp"></jsp:include>
+<jsp:include page="../nav.jsp" ></jsp:include>
 </head>
 <body>
+<div class="createCardForm">
+	<form action="addACardToTheDatabase.do" method="POST">
 
-	<form action="addACardToTheDatabase.do" method="GET">
-
-		<label for="cardName">Card Name:</label> <input type="text" name="cardName" required><br>
 		<label for="setAbbr">Set Abbreviation:</label> <input type="text" name="setAbbr" value="RTR" disabled="disabled" required><br>
+		<label for="cardName">Card Name:</label> <input type="text" name="cardName" required><br>
 		Is this card legendary? <br>
 		<label for="legendary">Yes</label> <input type="radio" value="true" name="legendary"> <br> 
 		<label for="legendary">No</label> <input type="radio" value="false" name="legendary"> <br> 
+		<label for="cardType">Card Type:</label> <select name="cardType" required>
+			<option value="Creature">Creature</option>
+			<option value="Planeswalker">Planeswalker</option>
+			<option value="Artifact">Artifact</option>
+			<option value="Instant">Instant</option>
+			<option value="Sorcery">Sorcery</option>
+			<option value="Land">Land</option>
+		</select><br>
+		 <label for="cardSubType">Card Subtype:</label> <input type="text" name="cardSubText"><br> 
+		 <label for="cardText">Card Text</label> <input type="text" name="cardText"><br>
+		  <label for="image">Image link:</label> <input type="url" name="image" ><br> 
+		  
+		  <label for="color">Color:</label> <select name="color" required><br>
+			<option value="White">White</option>
+			<option value="Blue">Blue</option>
+			<option value="Black">Black</option>
+			<option value="Red">Red</option>
+			<option value="Green">Green</option>
+			<option value="Artifact">Artifact</option>
+			<option value="Gold">Gold</option>
+			<option value="Land">Land</option>
+		</select><br>
 		
-		<label for="filmlanguage">Language:</label> <select name="language" required>
-			<option value="1">English</option>
-			<option value="2">Italian</option>
-			<option value="3">Japanese</option>
-			<option value="4">Mandarin</option>
-			<option value="5">French</option>
-			<option value="6">German</option>
-		</select><br> <label for="filmRentalDuration">Rental Duration:</label> <input
-			type="number" name="rentalDuration" required><br> <label
-			for="filmRentalRate">Rental Rate:</label> <input type="number"
-			name="rentalRate" required><br> <label for="filmLength">Length:</label>
-		<input type="number" name="length" required><br> <label
-			for="filmReplacementCost">Replacement Cost:</label> <input
-			type="text" name="replacementCost" required><br> <label
-			for="filmRating">Rating:</label> <select name="rating" required><br>
-			<option value="G">G</option>
-			<option value="PG">PG</option>
-			<option value="PG13">PG13</option>
-			<option value="R">R</option>
-			<option value="NC17">NC17</option>
-		</select><br> <label for="filmSpecitalFeatures">Special Features:</label>
-		<input type="text" name="specialFeatures"><br> <input
-			type="submit" value="Submit" />
+		  <label for="setPosition">Set Position:</label> <input type="number" name="setPosition" required><br>
+		  <label for="Rarity">Rarity:</label> <input type="text" name="Rarity" required minlength="1" maxlength="2"><br>
+		  <label for="cmc">Converted Mana cost:</label> <input type="number" name="cmc" ><br>
+		  <label for="mc">Mana cost:</label> <input type="text" name="mc" ><br>
+		  <label for="power">Power:</label> <input type="number" name="power" ><br>
+		  <label for="toughness">Toughness:</label> <input type="number" name="toughness" ><br>
+		  <label for="loyalty">Loyalty:</label> <input type="number" name="loyalty" ><br>
+		   
+		
+		
+		<input type="submit" name="card" value="Submit" />
 
 	</form>
-
+</div>
 </body>
 </html>

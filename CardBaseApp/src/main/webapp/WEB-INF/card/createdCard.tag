@@ -5,17 +5,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Card</title>
+<title>Created Card</title>
 <jsp:include page="../bootstrapjsp.jsp"></jsp:include>
 <jsp:include page="../nav.jsp" ></jsp:include>
 </head>
 <body>
 
-
-<div>
+<h1>You successfully created: </h1>
   <h5>${card.cardName}</h5>
 <img src="${card.image }" alt="${card.cardName} style="width:50px;height:60px;">
-</div>
 
 </body>
 </html>

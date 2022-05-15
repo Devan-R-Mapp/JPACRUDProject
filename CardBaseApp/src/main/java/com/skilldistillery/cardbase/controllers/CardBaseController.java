@@ -26,12 +26,29 @@ public class CardBaseController {
 		return "card/create";
 	}
 
-	@RequestMapping(path = "/", method = RequestMethod.GET)
+	@RequestMapping(path = { "/", "home.do" }, method = RequestMethod.GET)
 	public String index(Model model) {
 		model.addAttribute("cards", dao.findAllCards());
 		return "index";
 	}
 
+	@RequestMapping(path = {"addACardToTheDatabase.do"}, method = RequestMethod.POST)
+	public String addACard(@RequestParam Card card, Model model) {
+		Card cardCreated = dao.createCard(card);
+		model.addAttribute("card", cardCreated);
+		return "card/createdCard";
+	}
+//	@RequestMapping(path = {"addACardToTheDatabase.do"}, method = RequestMethod.POST)
+//	public String addACard(@RequestParam String setAbbr, String cardName, boolean legendary, String cardType, String cardSubType,
+//			String cardText, String image, String color, String setPosition, String rarity, Integer cmc, String mc,
+//			Integer power, Integer toughness, Integer loyalty, Model model) {
+//		Card cardCreated = new Card(setAbbr, cardName, legendary, cardType, cardSubType, cardText, image, color, setPosition, rarity, cmc, mc, power, toughness, loyalty);
+//		dao.createCard(cardCreated);
+//		model.addAttribute("card", cardCreated);
+//		return "card/createdCard";
+//	}
+	
+	
 	@RequestMapping("getCard.do")
 	public String showFilm(@RequestParam Integer fid, Model model) {
 		Card card2 = dao.findById(fid); // find the film

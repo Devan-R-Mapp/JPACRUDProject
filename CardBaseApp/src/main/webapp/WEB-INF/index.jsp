@@ -8,7 +8,7 @@
 <title>Hades Card App</title>
 </head>
 <body>
-
+<%@ include file="nav.jsp" %>
 
 	<h1>Welcome to the card app.</h1>
 
