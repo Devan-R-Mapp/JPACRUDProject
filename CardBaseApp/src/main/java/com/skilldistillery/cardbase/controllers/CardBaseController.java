@@ -20,10 +20,16 @@ public class CardBaseController {
 	public String index() {
 		return "index"; // if using a ViewResolver.
 	}
-	
+	 
 	@RequestMapping(path = { "/", "createCard.do" })
 	public String gotocreate() {
 		return "card/create";
+	}
+	@RequestMapping(path = {"updateCard.do" }, method = RequestMethod.GET)
+	public String gotoUpdate(int id, Model model) {
+		Card updatedCard = dao.findById(id);
+		model.addAttribute("card", updatedCard);
+		return "card/update";
 	}
 
 	@RequestMapping(path = { "/", "home.do" }, method = RequestMethod.GET)
@@ -38,6 +44,22 @@ public class CardBaseController {
 		model.addAttribute("card", cardCreated);
 		return "card/createdCard";
 	}
+	
+	@RequestMapping(path= {"deleteCard.do"}, method = { RequestMethod.POST, RequestMethod.GET })
+	public String deleteACard(int id ) {
+		Card cardToBeDeleted = dao.findById(id);
+		dao.deleteCard(cardToBeDeleted);
+		return "card/deletedCard";
+	}
+	
+	@RequestMapping(path = {"updateACardToTheDatabase.do"}, method = RequestMethod.POST)
+	public String updateACard(Card newCard, Model model) {
+		
+		Card cardToBeUpdated = dao.updateCard(newCard);
+		model.addAttribute("card", cardToBeUpdated);
+		return "card/updatedCard";
+	}
+
 //	@RequestMapping(path = {"addACardToTheDatabase.do"}, method = RequestMethod.POST)
 //	public String addACard(@RequestParam String setAbbr, String cardName, boolean legendary, String cardType, String cardSubType,
 //			String cardText, String image, String color, String setPosition, String rarity, Integer cmc, String mc,

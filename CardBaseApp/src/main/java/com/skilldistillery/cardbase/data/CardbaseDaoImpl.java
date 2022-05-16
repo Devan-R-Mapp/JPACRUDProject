@@ -1,5 +1,6 @@
 package com.skilldistillery.cardbase.data;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -35,16 +36,39 @@ public class CardbaseDaoImpl implements CardBaseDAO {
 	}
 
 	@Override
-	public Card updateCard(Card card) {
-		Card updatedcard = em.find(Card.class, card.getId());
-		updatedcard.setCardName(card.getCardName());
+	public Card updateCard(Card newCard ) {
+		Card updatedcard = em.find(Card.class, newCard.getId());
+//		updatedcard.setSetAbbr(newCard.getSetAbbr());
+		updatedcard.setCardName(newCard.getCardName());
+		updatedcard.setLegendary(newCard.getLegendary());
+		updatedcard.setCardType(newCard.getCardType());
+		updatedcard.setCardSubType(newCard.getCardSubType());
+		updatedcard.setCardText(newCard.getCardText());
+		updatedcard.setImage(newCard.getImage());
+		updatedcard.setColor(newCard.getColor());
+		updatedcard.setSetPosition(newCard.getSetPosition());
+		updatedcard.setRarity(newCard.getRarity());
+		updatedcard.setCmc(newCard.getCmc());
+		updatedcard.setMc(newCard.getMc());
+		updatedcard.setPower(newCard.getPower());
+		updatedcard.setToughness(newCard.getToughness());
+		updatedcard.setLoyalty(newCard.getLoyalty());
+		
+		
+		
+		
 		return updatedcard;
 	}
 
 	@Override
 	public boolean deleteCard(Card card) {
-		// TODO Auto-generated method stub
+		try {
+		em.remove(card);
+		} catch (Exception e) {
+			
+		}
 		return false;
 	}
 
 }
+ 

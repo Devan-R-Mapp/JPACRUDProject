@@ -58,6 +58,27 @@ public class Card {
 		this.toughness = toughness;
 		this.loyalty = loyalty;
 	}
+	public Card(int id, String setAbbr, String cardName, boolean legendary, String cardType, String cardSubType,
+			String cardText, String image, String color, String setPosition, String rarity, Integer cmc, String mc,
+			Integer power, Integer toughness, Integer loyalty) {
+		super();
+		this.id = id;
+		this.setAbbr = setAbbr;
+		this.cardName = cardName;
+		this.legendary = legendary;
+		this.cardType = cardType;
+		this.cardSubType = cardSubType;
+		this.cardText = cardText;
+		this.image = image;
+		this.color = color;
+		this.setPosition = setPosition;
+		this.rarity = rarity;
+		this.cmc = cmc;
+		this.mc = mc;
+		this.power = power;
+		this.toughness = toughness;
+		this.loyalty = loyalty;
+	}
 
 
 

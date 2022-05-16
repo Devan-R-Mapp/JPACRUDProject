@@ -9,6 +9,6 @@ public interface CardBaseDAO {
 	Card findById(int cardid);
 	List<Card> findAllCards();
 	Card createCard(Card card);
-	Card updateCard(Card card);
+	Card updateCard(Card card2);
 	boolean deleteCard(Card card);
 }
