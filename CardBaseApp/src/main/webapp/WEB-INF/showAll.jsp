@@ -10,17 +10,13 @@
 <body>
 <%@ include file="nav.jsp" %>
 
-	<h1>Welcome to the card app.</h1>
+	<h1>Here are all the cards that are currently in the system.</h1>
 
-	<form action="getCard.do" method="GET">
-		Do you know the card ID: <input type="number" name="fid" /> <input type="submit"
-			value="Show Card" />
-	</form>
-	
-	<form action="createCard.do">
-	<input type="submit" value="Create a new card">
-	</form>
-	
 
+	<ul>
+		<c:forEach var="card" items="${cards }">
+			<li><a href="getCard.do?fid=${card.id }">${card.cardName} </a></li>
+		</c:forEach>
+	</ul>
 </body>
 </html>

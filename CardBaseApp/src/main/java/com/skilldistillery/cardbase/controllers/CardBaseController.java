@@ -20,8 +20,11 @@ public class CardBaseController {
 	public String index() {
 		return "index"; // if using a ViewResolver.
 	}
-	 
-	@RequestMapping(path = { "/", "createCard.do" })
+	@RequestMapping(path = { "showAll.do" })
+	public String showAll() {
+		return "showAll"; // if using a ViewResolver.
+	}
+	@RequestMapping(path = { "createCard.do" })
 	public String gotocreate() {
 		return "card/create";
 	}
@@ -32,10 +35,10 @@ public class CardBaseController {
 		return "card/update";
 	}
 
-	@RequestMapping(path = { "/", "home.do" }, method = RequestMethod.GET)
+	@RequestMapping(path = { "showAll.do" }, method = RequestMethod.GET)
 	public String index(Model model) {
 		model.addAttribute("cards", dao.findAllCards());
-		return "index";
+		return "showAll";
 	}
 
 	@RequestMapping(path = {"addACardToTheDatabase.do"}, method = RequestMethod.POST)

@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+body {
+	background-image: linear-gradient(to bottom right, red, yellow);
+	  background-repeat: no-repeat;
+  background-size: cover;
+}
+.buttons {
+  width: auto;
+}
+
+.action_btn {
+  width: auto;
+}

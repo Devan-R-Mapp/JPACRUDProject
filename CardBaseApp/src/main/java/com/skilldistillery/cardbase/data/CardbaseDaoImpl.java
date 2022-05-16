@@ -25,7 +25,7 @@ public class CardbaseDaoImpl implements CardBaseDAO {
 
 	@Override
 	public List<Card> findAllCards() {
-		String SQL = "Select c from Card c";
+		String SQL = "Select c from Card c order by c.setPosition";
 		return em.createQuery(SQL, Card.class).getResultList();
 	}
 

@@ -12,4 +12,5 @@
 	rel="stylesheet"
 	integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
 	crossorigin="anonymous">
-<link href="css/main.css" rel="stylesheet" type="text/css">
+	
+<link href="css/main2.css" rel="stylesheet" type="text/css">
